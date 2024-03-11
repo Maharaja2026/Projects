@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Add Employee</title>
+</head>
+<style>
+body {
+background-color: #4070F4;
+}
+table{
+height:350px;
+width: 350px;
+border-radius:15px;
+text-align: center;
+position: relative;
+left:50px;
+}
+#add_module{
+border: 3px solid black;
+background-color: white;
+border-radius: 30px;
+height: 510px;
+width: 450px;
+margin-left: 440px;
+margin-top: 100px;
+text-align: center;
+font-weight: bold;
+position: relative;
+left:75px;
+}
+input[type="submit"]{
+background-color: green;
+text-align: center;
+border-radius: 10px;
+color:white;
+height:35px;
+width: 100px;
+position: relative;
+top: 10px;
+font-size: 15px;
+}
+input[type="submit"]:hover{
+font-size: 17px;
+}
+</style>
+<body>
+<div id="add_module">
+    <h2>Add Employee</h2>
+    <form action="/employee/save" method="post">
+        <table>
+            <tr>
+                <td>Employee Name</td>
+                <td><input type="text" name="employeeName"></td>
+            </tr>
+            <tr>
+                <td>Employee Contact</td>
+                <td><input type="number" name="employeeContact"></td>
+            </tr>
+            <tr>
+                <td>Employee Email</td>
+                <td><input type="text" name="employeeEmail"></td>
+            </tr>
+                <td>Employee Salary</td>
+                <td><input type="number" name="employeeSalary"></td>
+            </tr>
+        </table>
+        <input type="submit">
+    </form>
+</div>
+</body>
+</html>

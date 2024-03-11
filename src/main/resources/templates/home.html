@@ -1,0 +1,91 @@
+<!-- src/main/resources/templates/employeeList.html -->
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home</title>
+    <style>
+body{
+    background-color: #CFE3D8;
+}
+h2 {
+font-size : 40px;
+text-align : center;
+}
+#add{
+background-color: #007BFF;
+font-size : 25px;
+padding : 5px;
+height : 50px;
+border: 1px solid blue;
+border-radius : 5px;
+position : relative;
+left : 250px;
+text-decoration:none;
+}
+table {
+    background-color: white;
+	border-collapse: collapse;
+	width: 50%;
+	margin-top : 10px;
+	margin-left: 250px;
+	border-radius:15px;
+    text-align: center;
+    width: 1000px;
+}
+
+th, td {
+	border: 2px solid black;
+	text-align: center;
+	height : 50px;
+}
+th{
+height: 20px;
+font-size: large;
+}
+td>a{
+text-decoration: none;
+padding: 10px;
+color: black;
+font-weight: bold;
+border-radius: 5px;
+}
+td>#edit{
+background-color: #28A745;
+border: 1px solid green;
+}
+td>#delete{
+background-color: #DC3545;
+border: 1px solid red;
+}
+    </style>
+</head>
+<body>
+<h2>Employee List</h2>
+<a id="add" th:href="@{/employee/add}">Add Employee</a>
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Email</th>
+        <th>Salary</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="employee : ${employees}">
+        <td th:text="${employee.employeeId}"></td>
+        <td th:text="${employee.employeeName}"></td>
+        <td th:text="${employee.employeeContact}"></td>
+        <td th:text="${employee.employeeEmail}"></td>
+        <td th:text="${employee.employeeSalary}"></td>
+        <td><a id="edit" th:href="@{/employee/edit(employeeId=${employee.employeeId})}">edit</a></td>
+        <td><a id="delete" th:href="@{/employee/delete(employeeId=${employee.employeeId})}">delete</a></td>
+    </tr>
+    </tbody>
+</table>
+</body>
+</html>
