@@ -58,6 +58,21 @@ td>#delete{
 background-color: #DC3545;
 border: 1px solid red;
 }
+#logout{
+margin-top:10px;
+background-color: black;
+text-align: center;
+border-radius: 10px;
+color:white;
+height:35px;
+width: 100px;
+font-size: 15px;
+position : absolute;
+left:700px;
+}
+#logout:hover{
+font-size: 17px;
+}
     </style>
 </head>
 <body>
@@ -87,5 +102,6 @@ border: 1px solid red;
     </tr>
     </tbody>
 </table>
+<a th:href="@{/manager/logout}"><input type="submit" id="logout" value="Logout"></a>
 </body>
 </html>
